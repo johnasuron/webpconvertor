@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to WEBP Converter</title>
+
+    <!-- Favicon and Icon Tags -->
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" href="android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" href="android-chrome-512x512.png" sizes="512x512">
+    <meta name="apple-mobile-web-app-title" content="Image to WEBP Converter" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSZip Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Anime.js Library for Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Image to WEBP Converter</h1>
+            <p>Effortlessly convert your images to the modern WEBP format for faster loading and better performance.</p>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Why Use WEBP Images?</h2>
+            <p>
+                WEBP is a modern image format that provides superior compression and faster loading times compared to
+                traditional formats like JPEG and PNG.
+                By using WEBP, you can significantly reduce the size of your images without sacrificing quality, leading
+                to improved website performance and user experience.
+            </p>
+            <img src="web.jpg" alt="WEBP Benefits" class="content-image">
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section class="converter-section">
+        <div class="converter-container">
+            <h2>Convert Your Images</h2>
+            <input type="file" id="imageInput" accept="image/jpeg, image/png, image/gif, image/bmp, image/webp" multiple />
+            <label for="width">Width:</label>
+            <input type="number" id="width" placeholder="Enter width" min="1" />
+            <label for="height">Height:</label>
+            <input type="number" id="height" placeholder="Enter height" min="1" />
+            <label for="sizePercentage">Size Percentage:</label>
+            <input type="number" id="sizePercentage" placeholder="Enter size % (e.g., 50)" min="1" max="100" />
+            <button id="convertButton" disabled>Convert to WEBP & Download ZIP</button>
+            <div id="progressSection" style="display: none; margin-top: 20px;">
+                <progress id="progressBar" value="0" max="100"></progress>
+                <p id="progressText">Progress: 0%</p>
+            </div>
+            <div id="outputSection" style="display: none;">
+                <h3>Converted Images:</h3>
+                <div id="convertedImages"></div>
+                <a id="downloadLink" download="converted_images.zip" class="download-link">Download ZIP</a>
+            </div>
+            <p id="statusMessage"></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2025 Asuron Technologies. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
+    <script src="effects.js"></script>
+</body>
+
+</html>
